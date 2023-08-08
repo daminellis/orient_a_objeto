@@ -1,0 +1,102 @@
+exercicio 1
+
+#Escreva um metodo para a classe ContaCorrente() vista em aula, que permita a transferencia de valores entre duas contas (objetos).
+#Esse metodo devera receber como parametro: valor, origem e destino.
+
+class ContaCorrente:
+    def __init__ (self, saldo_origem, saldo_destino):
+        self.saldo_origem = saldo_origem
+        self.saldo_destino = saldo_destino
+    
+    def transferir(self, valor):
+        if self.saldo_origem >= valor:
+            self.saldo_origem -= valor
+            self.saldo_destino += valor
+            print("Transferência realizada com sucesso!")
+        else:
+            print("Saldo insuficiente para realizar a transferência.")
+    
+    def mostrar_saldos(self):
+        print(f"Saldo na conta de origem: {self.saldo_origem}")
+        print(f"Saldo na conta de destino: {self.saldo_destino}")
+
+# Obtendo valores iniciais das contas do usuário
+saldo_origem = float(input("Digite o saldo da conta de origem: "))
+saldo_destino = float(input("Digite o saldo da conta de destino: "))
+
+# Criando instância da classe ContaCorrente
+conta = ContaCorrente(saldo_origem, saldo_destino)
+
+# Solicitando o valor da transferência e realizando-a
+valor_transferencia = float(input("Digite o valor a ser transferido: "))
+conta.transferir(valor_transferencia)
+
+# Mostrando saldos após a transferência
+conta.mostrar_saldos()
+=================================================================================================================================================
+=================================================================================================================================================
+exercicio 2
+
+# Crie uma classe chamada Aluno() com os seguintes atributos:Nome Idade Nota 1 Nota 2
+# Crie os seguintes métodos: Calcula média, retornando a média aritmética entre as notas.
+# Mostra dados, que somente imprime o valor de todos os atributos.
+# Resultado, que verifica se o aluno está aprovado ou reprovado (se a média for maior ou igual a 6.0, o aluno está aprovado).
+# Crie dois objetos (aluno1 e aluno2) e teste todos os métodos.
+
+class Aluno:
+    def __init__(self, nome, idade, nota1, nota2):
+        self.nome = nome
+        self.idade = idade
+        self.nota1 = nota1
+        self.nota2 = nota2
+    
+    def calcula_media(self):
+        return (self.nota1 + self.nota2) / 2
+    
+    def mostra_dados(self):
+        print("Dados do Aluno:")
+        print(f"Nome: {self.nome}")
+        print(f"Idade: {self.idade}")
+        print(f"Nota 1: {self.nota1}")
+        print(f"Nota 2: {self.nota2}")
+    
+    def resultado(self):
+        media = self.calcula_media()
+        if media >= 6.0:
+            return "Aprovado"
+        else:
+            return "Reprovado"
+
+
+aluno1 = Aluno(nome="João", idade=18, nota1=7.5, nota2=8.0)
+aluno2 = Aluno(nome="Maria", idade=19, nota1=5.0, nota2=6.5)
+
+aluno1.mostra_dados()
+print(f"Média: {aluno1.calcula_media()}")
+print(f"Resultado: {aluno1.resultado()}")
+
+print("\n")
+
+aluno2.mostra_dados()
+print(f"Média: {aluno2.calcula_media()}")
+print(f"Resultado: {aluno2.resultado()}")
+
+=================================================================================================================================================
+=================================================================================================================================================
+
+=================================================================================================================================================
+=================================================================================================================================================
+
+=================================================================================================================================================
+=================================================================================================================================================
+
+=================================================================================================================================================
+=================================================================================================================================================
+
+=================================================================================================================================================
+=================================================================================================================================================
+
+=================================================================================================================================================
+=================================================================================================================================================
+
+
